@@ -1,0 +1,30 @@
+{
+  "name": "@nsea/util",
+  "version": "1.0.0",
+  "description": "utils",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "test",
+    "pub": "npm publish --access=public",
+    "server": "node app.babel.js",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NorthSeacoder/nsea.git"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "NorthSeacoder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NorthSeacoder/nsea/issues"
+  },
+  "homepage": "https://github.com/NorthSeacoder/nsea#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
