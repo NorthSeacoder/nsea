@@ -1,3 +1,4 @@
+import u from './common/util';
 /**
  * @description 数组操作类
  */

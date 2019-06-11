@@ -1,3 +1,3 @@
 // import utils from '../src'
-const utils=require('../lib/index')
-utils.Array.test();
+const utils=require('../lib/utils.min.js')
+ utils.Array.test();
