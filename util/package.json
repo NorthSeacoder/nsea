@@ -1,6 +1,6 @@
 {
   "name": "@nsea/util",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "utils",
   "main": "lib/utils.min.js",
   "scripts": {
