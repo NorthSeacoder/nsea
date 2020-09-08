@@ -111,7 +111,7 @@ export default class Resource implements Options {
     url: string;
 
     getHost: () => string;
-
+    [key: string]: any;
     extend(config: any) {
         Object.keys(config).forEach((key) => {
             const {method, url, link, download, targetSelf, formData}: CustomConfig = config[key];
