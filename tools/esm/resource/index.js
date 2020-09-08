@@ -98,7 +98,7 @@ var Resource = (function () {
         var url = _a.url, getHost = _a.getHost, config = __rest(_a, ["url", "getHost"]);
         this.url = url;
         this.getHost = getHost;
-        ['get', 'patch', 'post', 'put', 'delete', 'save', 'savePatch'].forEach(function (method) { return _this[method].bind(_this); });
+        ['get', 'patch', 'post', 'put', 'delete', 'save', 'savePatch'].forEach(function (method) { return _this[method] = _this[method].bind(_this); });
         this.extend(config);
     }
     Resource.create = function (opts) {

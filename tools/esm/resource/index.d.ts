@@ -27,6 +27,7 @@ export default class Resource implements Options {
     static create(opts: Options): Resource;
     url: string;
     getHost: () => string;
+    [key: string]: any;
     extend(config: any): void;
     parse(url: any, ...args: any): any[];
     get(...args: any[]): Promise<any>;

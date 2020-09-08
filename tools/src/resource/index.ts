@@ -99,8 +99,9 @@ export default class Resource implements Options {
     constructor({url, getHost, ...config}: Options) {
         this.url = url;
         this.getHost = getHost;
-        // @ts-ignore
-        ['get', 'patch', 'post', 'put', 'delete', 'save', 'savePatch'].forEach(method => this[method].bind(this));
+        ['get', 'patch', 'post', 'put', 'delete', 'save', 'savePatch'].forEach(
+            method => this[method] = this[method].bind(this)
+        );
         this.extend(config);
     }
 
@@ -111,7 +112,9 @@ export default class Resource implements Options {
     url: string;
 
     getHost: () => string;
+
     [key: string]: any;
+    
     extend(config: any) {
         Object.keys(config).forEach((key) => {
             const {method, url, link, download, targetSelf, formData}: CustomConfig = config[key];
