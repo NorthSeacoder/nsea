@@ -2,7 +2,7 @@
  * @Author: mengpeng
  * @Date: 2021-05-20 20:33:20
  * @Last Modified by: mengpeng 
- * @Last Modified time: 2021-05-20 20:49:25 
+ * @Last Modified time: 2021-05-20 20:51:18 
  */
 
 import map from 'lodash.map';
@@ -56,7 +56,7 @@ export const setCommit = (options: Option) => {
             default: defaultType,
         },
         {
-            type: !scopes ? 'input' : 'list',
+            type: isInput ? 'input' : 'list',
             name: 'scope',
             message: isInput ? '本次改动涉及范围 (e.g. 组件 or 文件名):' : '选择此次提交的项目',
             choices: isInput ? null : scopes,
