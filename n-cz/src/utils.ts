@@ -1,12 +1,24 @@
+/*
+ * @Author: mengpeng
+ * @Date: 2021-05-20 20:33:20
+ * @Last Modified by: mengpeng 
+ * @Last Modified time: 2021-05-20 20:42:44 
+ */
+
 import map from 'lodash.map';
 import longest from 'longest';
 import path from 'path';
 import fs from 'fs';
 
+interface Scope {
+    name: String;
+    value: String;
+}
 interface Option {
     types?: Object;
     defaultType?: String;
     defaultScope?: String;
+    scopes?: Array<Scope>;
 }
 interface Type {
     description?: String;
@@ -24,7 +36,7 @@ export const getConfig = (projectPath: string = process.cwd()) => {
 };
 //[type][scope] message
 export const setCommit = (options: Option) => {
-    const {types, defaultScope, defaultType} = options;
+    const {types, defaultScope, defaultType, scopes} = options;
 
     const length = longest(Object.keys(types)).length + 1;
 
@@ -34,7 +46,6 @@ export const setCommit = (options: Option) => {
             value: key,
         };
     });
-    const isInput = typeof defaultScope === 'string';
     const promptOption = [
         {
             type: 'list',
@@ -44,11 +55,11 @@ export const setCommit = (options: Option) => {
             default: defaultType,
         },
         {
-            type: isInput ? 'input' : 'list',
+            type: !scopes ? 'input' : 'list',
             name: 'scope',
-            message: isInput ? '本次改动涉及范围 (e.g. 组件 or 文件名):' : '选择此次提交的项目',
-            choices: isInput ? null : defaultScope,
-            default: !isInput ? null : defaultScope,
+            message: !scopes ? '本次改动涉及范围 (e.g. 组件 or 文件名):' : '选择此次提交的项目',
+            choices: scopes,
+            default: !!scopes ? null : defaultScope,
         },
         {
             type: 'input',
