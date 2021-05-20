@@ -56,7 +56,6 @@ export const setCommit = (options: Option) => {
             message: '本次修改的概要信息',
         },
     ];
-    console.log(isInput,promptOption[1],choices)
     return {
         prompter: (cz: any, commit: any) => {
             cz.prompt(promptOption).then((answer: Answer) => {
