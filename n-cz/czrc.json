@@ -1,3 +1,6 @@
 {
-    "defaultScope":"@nsea/cz"
+    "defaultScope": [
+        {"name": "项目甲", "value": "one"},
+        {"name": "项目乙", "value": "two"}
+    ]
 }
