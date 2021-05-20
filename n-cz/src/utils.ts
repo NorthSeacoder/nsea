@@ -47,7 +47,8 @@ export const setCommit = (options: Option) => {
             type: isInput ? 'input' : 'list',
             name: 'scope',
             message: isInput ? '本次改动涉及范围 (e.g. 组件 or 文件名):' : '选择此次提交的项目',
-            default: defaultScope,
+            choices: isInput ? null : defaultScope,
+            default: !isInput ? null : defaultScope,
         },
         {
             type: 'input',
