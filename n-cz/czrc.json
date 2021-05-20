@@ -1,7 +1,4 @@
 {
-    "scopes": [
-        {"name": "项目甲", "value": "one"},
-        {"name": "项目乙", "value": "two"}
-    ],
+    "scopes": [],
     "defaultScope": "@nsea/cz"
 }
