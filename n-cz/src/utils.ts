@@ -35,29 +35,29 @@ export const setCommit = (options: Option) => {
         };
     });
     const isInput = typeof defaultScope === 'string';
-
+    const promptOption = [
+        {
+            type: 'list',
+            name: 'type',
+            message: '选择此次提交的改动类型:',
+            choices: choices,
+            default: defaultType,
+        },
+        {
+            type: isInput ? 'input' : 'list',
+            name: 'scope',
+            message: isInput ? '本次改动涉及范围 (e.g. 组件 or 文件名):' : '选择此次提交的项目',
+            default: defaultScope,
+        },
+        {
+            type: 'input',
+            name: 'message',
+            message: '本次修改的概要信息',
+        },
+    ];
     return {
         prompter: (cz: any, commit: any) => {
-            cz.prompt([
-                {
-                    type: 'list',
-                    name: 'type',
-                    message: '选择此次提交的改动类型:',
-                    choices: choices,
-                    default: defaultType,
-                },
-                {
-                    type: isInput ? 'input' : 'list',
-                    name: 'scope',
-                    message: isInput?'本次改动涉及范围 (e.g. 组件 or 文件名):':"选择此次提交的项目",
-                    default: defaultScope,
-                },
-                {
-                    type: 'input',
-                    name: 'message',
-                    message: '本次修改的概要信息',
-                },
-            ]).then((answer: Answer) => {
+            cz.prompt(promptOption).then((answer: Answer) => {
                 const {type, scope, message} = answer;
                 const head = `[${type}][${scope}] ${message}`;
                 commit(head);
