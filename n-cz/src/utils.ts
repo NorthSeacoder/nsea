@@ -2,7 +2,7 @@
  * @Author: mengpeng
  * @Date: 2021-05-20 20:33:20
  * @Last Modified by: mengpeng 
- * @Last Modified time: 2021-05-20 20:42:44 
+ * @Last Modified time: 2021-05-20 20:49:25 
  */
 
 import map from 'lodash.map';
@@ -46,6 +46,7 @@ export const setCommit = (options: Option) => {
             value: key,
         };
     });
+    const isInput = !scopes || scopes.length === 0;
     const promptOption = [
         {
             type: 'list',
@@ -57,9 +58,9 @@ export const setCommit = (options: Option) => {
         {
             type: !scopes ? 'input' : 'list',
             name: 'scope',
-            message: !scopes ? '本次改动涉及范围 (e.g. 组件 or 文件名):' : '选择此次提交的项目',
-            choices: scopes,
-            default: !!scopes ? null : defaultScope,
+            message: isInput ? '本次改动涉及范围 (e.g. 组件 or 文件名):' : '选择此次提交的项目',
+            choices: isInput ? null : scopes,
+            default: !isInput ? null : defaultScope,
         },
         {
             type: 'input',

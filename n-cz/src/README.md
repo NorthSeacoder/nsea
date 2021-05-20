@@ -26,14 +26,17 @@ npm i -D commitizen @nsea/cz
 ## Configuration
 
 - this adapter will gengrate commit-message as '[type][scope] message'
+
 Add the following to your `czrc.json`:
 
 ```json
 
 {
+    "scopes":[],//{name,value}
     "defaultScope": [
         {"name": "项目甲", "value": "one"},
         {"name": "项目乙", "value": "two"}
     ]
 }
 ```
+scope will be input when scopes is [] or undefined
