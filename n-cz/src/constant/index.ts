@@ -1,5 +1,9 @@
 export const defaultTypes = {
     types: {
+        init: {
+            description: ' 项目初始化',
+            title: 'Initial',
+        },
         feat: {
             description: '增加新功能',
             title: 'Features',

@@ -24,7 +24,7 @@ export const getConfig = (projectPath: string = process.cwd()) => {
 };
 //[type][scope] message
 export const setCommit = (options: Option) => {
-    const types = options.types;
+    const {types, defaultScope, defaultType} = options;
 
     const length = longest(Object.keys(types)).length + 1;
 
@@ -34,6 +34,7 @@ export const setCommit = (options: Option) => {
             value: key,
         };
     });
+    const isInput = typeof defaultScope === 'string';
 
     return {
         prompter: (cz: any, commit: any) => {
@@ -41,15 +42,15 @@ export const setCommit = (options: Option) => {
                 {
                     type: 'list',
                     name: 'type',
-                    message: '选择次提交的改动类型:',
+                    message: '选择此次提交的改动类型:',
                     choices: choices,
-                    default: options.defaultType,
+                    default: defaultType,
                 },
                 {
-                    type: 'input',
+                    type: isInput ? 'input' : 'list',
                     name: 'scope',
-                    message: '本次改动涉及范围 (e.g. 组件 or 文件名):',
-                    default: options.defaultScope,
+                    message: isInput?'本次改动涉及范围 (e.g. 组件 or 文件名):':"选择此次提交的项目",
+                    default: defaultScope,
                 },
                 {
                     type: 'input',
