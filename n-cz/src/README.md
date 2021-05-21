@@ -25,7 +25,7 @@ npm i -D commitizen @nsea/cz
 
 ## Configuration
 
-- this adapter will gengrate commit-message as '[type][scope] message'
+- this adapter will gengrate commit-message as '[scope][type] message'
 
 Add the following to your `czrc.json`:
 
