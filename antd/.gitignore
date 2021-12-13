@@ -1,0 +1,42 @@
+# Intellij
+.idea
+*.iml
+
+# VS Code
+.vscode
+
+# OS X
+.DS_Store*
+._*
+Icon?
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
+
+# npm
+node_modules
+npm-debug.*
+package-lock.json
+*.log
+*.gz
+
+# bower
+bower_components
+
+# fis
+output
+build
+dist/**
+
+
+# log
+log
+
+# personal
+local.js

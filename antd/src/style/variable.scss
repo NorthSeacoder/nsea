@@ -1,0 +1,21 @@
+/*
+ * @Author: xiaodongyu
+ * @Date 2020-08-01 16:58:56
+ * @Last Modified by: xiaodongyu
+ * @Last Modified time: 2020-08-01 16:58:59
+ */
+
+// screen-sm 较小的 pad 显示器
+$screen-sm: 576px;
+
+$phone-screen: "only screen and (max-width : #{$screen-sm})";
+
+$font-color: rgba(0, 0, 0, .95);
+
+$green-base: #0b9067;
+$red-base: #ff1213;
+$primary: #1890ff;
+$yellow-base: #f7c411;
+$distances: 0, 10, 20, 30, 40, 50;
+$record-green: rgba(3, 144, 101, .2);
+$record-yellow: rgba(171, 36, 9, .2);

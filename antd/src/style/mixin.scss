@@ -1,0 +1,37 @@
+/*
+ * @Author: xiaodongyu
+ * @Date 2020-08-01 16:58:48
+ * @Last Modified by: xiaodongyu
+ * @Last Modified time: 2020-08-01 16:58:52
+ */
+
+@mixin unify-parent($child) {
+    @at-root #{selector-unify(&, $child)} {
+        @content;
+    }
+}
+
+@mixin custom-btn($bgc, $color: #fff) {
+    color: $color;
+    background-color: $bgc;
+    border-color: $bgc;
+
+    &:hover,
+    &:focus {
+        color: $color;
+        background-color: darken($bgc, 10%);
+        border-color: darken($bgc, 10%);
+    }
+}
+
+@mixin generator($property, $values, $short) {
+    @each $value in $values {
+        .#{$short}#{$value} {
+            #{$property}: #{$value}px;
+        }
+    }
+}
+
+@mixin genHeaderEnvironment($color) {
+    border-bottom-color: $color;
+}

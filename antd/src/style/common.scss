@@ -1,0 +1,70 @@
+/*
+ * @Author: xiaodongyu
+ * @Date 2020-08-01 15:38:15
+ * @Last Modified by: xiaodongyu
+ * @Last Modified time: 2020-08-01 17:04:10
+ */
+
+.yqg {
+    &-btn {
+        &-info {
+            @include custom-btn(#5bc0de);
+        }
+
+        &-success {
+            @include custom-btn(#5cb85c);
+        }
+
+        &-yellow {
+            @include custom-btn(#f7c411);
+        }
+    }
+
+    &-divider {
+        margin: 20px 0;
+    }
+
+    &-title {
+        margin: 20px 0;
+        padding-left: 10px;
+        border-left: 10px solid $primary;
+    }
+
+    &-text {
+        &-success {
+            color: $green-base;
+        }
+
+        &-danger {
+            color: $red-base;
+        }
+
+        &-primary {
+            color: $primary;
+        }
+
+        &-warning {
+            color: $yellow-base;
+        }
+    }
+
+    &-record-green {
+        background-color: $record-green;
+    }
+
+    &-record-yellow {
+        background-color: $record-yellow;
+    }
+
+    &-form-title {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 600;
+        color: #000;
+    }
+}
+
+@include generator("margin-top", $distances, "mt");
+@include generator("margin-right", $distances, "mr");
+@include generator("margin-bottom", $distances, "mb");
+@include generator("margin-left", $distances, "ml");

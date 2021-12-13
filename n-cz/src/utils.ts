@@ -2,7 +2,7 @@
  * @Author: mengpeng
  * @Date: 2021-05-20 20:33:20
  * @Last Modified by: mengpeng 
- * @Last Modified time: 2021-05-21 15:24:06 
+ * @Last Modified time: 2021-05-21 16:27:01 
  */
 
 import map from 'lodash.map';
@@ -72,7 +72,7 @@ export const setCommit = (options: Option) => {
         prompter: (cz: any, commit: any) => {
             cz.prompt(promptOption).then((answer: Answer) => {
                 const {type, scope, message} = answer;
-                const head = `[${type}][${scope}] ${message}`;
+                const head = `[${scope}][${type}] ${message}`;
                 commit(head);
             });
         },

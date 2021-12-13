@@ -1,0 +1,160 @@
+/*
+ * @Author: xiaodongyu
+ * @Date 2020-08-08 18:15:35
+ * @Last Modified by: xiaodongyu
+ * @Last Modified time: 2020-08-11 18:48:03
+ */
+
+$btn-margin: 10px;
+
+.yqg-simple-form {
+    .ant-form-horizontal {
+        .ant-input,
+        .ant-input-number,
+        .ant-time-picker {
+            width: 100%;
+        }
+
+        .ant-calendar-picker {
+            width: 100% !important;
+        }
+
+        .yqg-form {
+            &-btn-item {
+                text-align: right;
+
+                .ant-btn {
+                    margin-left: $btn-margin;
+                }
+            }
+
+            &-item-has-suffix {
+                .ant-form-item-children {
+                    display: flex;
+                    align-items: flex-end;
+                }
+            }
+        }
+
+        .ant-form-item-label {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 39px;
+            line-height: 1.2;
+            white-space: normal;
+            padding-right: 5px;
+
+            label:after {
+                margin: 0;
+            }
+        }
+
+        .ant-upload {
+            width: 100%;
+
+            button {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .ant-time-picker {
+            width: 100%;
+        }
+    }
+
+    .ant-form-vertical {
+        .ant-input,
+        .ant-input-number,
+        .ant-time-picker {
+            width: 100%;
+        }
+
+        .ant-calendar-picker {
+            width: 100% !important;
+        }
+
+        .ant-form-item {
+            padding-bottom: 0;
+        }
+
+        .ant-upload {
+            width: 100%;
+
+            button {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .yqg-md-editor {
+            line-height: 40px;
+        }
+
+        .yqg-form {
+            &-btn-item {
+                text-align: right;
+
+                .ant-btn {
+                    margin-left: $btn-margin;
+                }
+            }
+        }
+    }
+
+    .ant-form-inline {
+        .ant-input,
+        .ant-input-number,
+        .ant-select {
+            min-width: 180px;
+            max-width: 270px;
+        }
+
+        .yqg-form-btn-item .ant-btn {
+            margin-right: $btn-margin;
+        }
+
+        .ant-form-item {/* stylelint-disable-line */
+            margin-bottom: 15px;
+
+            &.yqg-form-item {
+                &-range {
+                    &:before {
+                        content: "-";
+                        position: absolute;
+                        left: -11px;
+                        top: 29px;
+                    }
+                }
+
+                &-block {
+                    display: block;
+                }
+
+                &-hidden {
+                    display: none !important;
+                }
+            }
+        }
+
+        .ant-form-item-with-help {
+            margin-bottom: 0;
+        }
+
+        .ant-form-item-label {
+            display: block;
+            text-align: left;
+            line-height: inherit;
+        }
+
+        .ant-form-item-control-wrapper {
+            display: block;
+
+            .ant-calendar-picker {
+                display: block;
+                line-height: 40px;
+            }
+        }
+    }
+}
