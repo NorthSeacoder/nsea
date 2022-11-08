@@ -37,7 +37,7 @@
     "rollup-plugin-postcss": "1.6.2",
     "rollup-plugin-scss": "0.4.0",
     "rollup-plugin-uglify": "4.0.0",
-    "rollup-plugin-vue": "5.0.0",
+    "rollup-plugin-vue": "6.0.0",
     "babel-plugin-external-helpers": "6.22.0"
   }
 }
