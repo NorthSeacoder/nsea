@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../franky"
+		},
+		{
+			"path": "../../../../utils/gogocode"
+		}
+	],
+	"settings": {}
+}

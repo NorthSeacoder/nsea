@@ -1,0 +1,28 @@
+{
+    "name": "@nsea/transfer",
+    "version": "0.0.10",
+    "description": "transfer code with gogocode",
+    "scripts": {
+        "start": "node ./test/run.js",
+        "build": "webpack --mode production",
+        "dev": "webpack --watch --mode development"
+    },
+    "keywords": [
+        "gogocode",
+        "ast"
+    ],
+    "main": "transform.js",
+    "author": "chibing",
+    "license": "ISC",
+    "engines": {
+        "node": "*"
+    },
+    "devDependencies": {
+        "gogocode": "^1.0.17",
+        "webpack": "^5.64.2",
+        "webpack-cli": "^4.9.1"
+    },
+    "dependencies": {
+        "prettier": "^2.5.1"
+    }
+}
